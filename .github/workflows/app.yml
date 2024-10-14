@@ -27,7 +27,7 @@ jobs:
         run: dotnet test
 
   security-scan:
-    name: Security Scan
+    name: Security
     needs: build
     uses: reniciuspagotto/ci-cd-reusable-composite/.github/workflows/security.yml@main
     with:
