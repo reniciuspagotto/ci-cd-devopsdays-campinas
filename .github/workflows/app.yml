@@ -31,4 +31,3 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     uses: reniciuspagotto/ci-cd-reusable-composite/.github/workflows/security.yml@main
-    secrets: inherit
