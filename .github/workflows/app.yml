@@ -1,0 +1,34 @@
+name: Application Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build | Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.x 
+      
+      - name: Dotnet Build
+        run: |
+          dotnet restore
+          dotnet build
+
+      - name: Dotnet Test
+        run: dotnet test
+
+  security-scan:
+    name: Security Scan
+    needs: build
+    runs-on: ubuntu-latest
+    uses: reniciuspagotto/ci-cd-reusable-composite/.github/workflows/security.yml@main
+    secrets: inherit
