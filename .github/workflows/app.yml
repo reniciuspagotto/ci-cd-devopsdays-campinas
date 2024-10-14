@@ -32,5 +32,5 @@ jobs:
     needs: build
     uses: reniciuspagotto/ci-cd-reusable-composite/.github/workflows/security.yml@main
     with:
-      image_name: reniciuspagotto/apiservice
+      image_name: mcr.microsoft.com/dotnet/aspnet:8.0
     secrets: inherit
