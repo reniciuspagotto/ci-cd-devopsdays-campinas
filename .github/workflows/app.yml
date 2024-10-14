@@ -31,5 +31,6 @@ jobs:
     needs: build
     uses: reniciuspagotto/ci-cd-reusable-composite/.github/workflows/security.yml@main
     with:
-      image_name: reniciuspagotto/apiservice:latest
-    secrets: inherit
+      image_name: "reniciuspagotto/apiservice:latest"
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
