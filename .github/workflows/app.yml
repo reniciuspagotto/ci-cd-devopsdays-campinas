@@ -30,6 +30,6 @@ jobs:
     name: Security Scan
     needs: build
     uses: reniciuspagotto/ci-cd-reusable-composite/.github/workflows/security.yml@main
-    secrets: inherit
     with:
       image_name: reniciuspagotto/apiservice:latest
+    secrets: inherit
