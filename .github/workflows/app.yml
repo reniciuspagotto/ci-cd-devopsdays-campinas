@@ -12,7 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: reniciuspagotto/ci-cd-reusable-composite/.github/composite-actions/checkout@main
+        with:
+          fetch-depth: 1
+          gh-token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v3
